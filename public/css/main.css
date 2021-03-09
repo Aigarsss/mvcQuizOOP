@@ -20,7 +20,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
   text-align: center;
 }
 
@@ -29,6 +28,7 @@
 }
 
 .body .container .mainHeader {
+  margin-top: 5rem;
   font-size: 3rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
@@ -40,7 +40,69 @@
   margin-bottom: 1.5rem;
 }
 
-.body .container .quizSelect {
+.body .container .answerSelect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.body .container .answerSelect .answerContianer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.body .container .answerSelect .answerContianer .answerRadio {
+  display: none;
+}
+
+.body .container .answerSelect .answerContianer .answerRadio:checked + .answerLabel {
+  border: 2px solid #ae613b;
+}
+
+.body .container .answerSelect .answerContianer .answerLabel {
+  background: #bfb6b1;
+  border-radius: 5px;
+  padding: 2rem 5rem;
+  margin: 0.5rem 0.5rem;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+.body .container .answerSelect .answerContianer .answerLabel:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  cursor: pointer;
+}
+
+.body .container .answerSelect .buttonContainer .confirmAnswer {
+  margin: 2rem 0;
+  outline: none;
+  background-color: #0d0d0d;
+  border: none;
+  color: #fdf9f7;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.body .container .answerSelect .buttonContainer .confirmAnswer:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.body .container .formSelect {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +116,7 @@
   margin: auto;
 }
 
-.body .container .quizSelect .quizSelect {
+.body .container .formSelect .quizSelect {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
@@ -62,7 +124,7 @@
   margin-right: 0.5rem;
 }
 
-.body .container .quizSelect .submit {
+.body .container .formSelect .submit {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -74,7 +136,7 @@
   border-radius: 5px;
 }
 
-.body .container .quizSelect .submit:hover {
+.body .container .formSelect .submit:hover {
   opacity: 0.98;
   cursor: pointer;
 }

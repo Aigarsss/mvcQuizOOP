@@ -5,7 +5,7 @@ require_once "includes/header.inc.php";
         <h1 class="mainHeader">Welcome Stranger!</h1>
         <h2 class="question">Are you ready for some questions? Select a quiz and test yourself</h2>
 
-        <form action="public/views/questions.php" method="POST" class="quizSelect">
+        <form action="questions.php" method="POST" class="formSelect">
             <select name="quizSelect" id="quizSelect" class="quizSelect">
                 <!-- <option disabled selected value></option> -->
 

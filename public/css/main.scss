@@ -15,13 +15,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  // height: 100vh;
   text-align: center;
 
   .container {
     width: 50%;
 
     .mainHeader {
+      margin-top: 5rem;
       font-size: 3rem;
       font-weight: 400;
       margin-bottom: 1.5rem;
@@ -33,7 +34,58 @@
       margin-bottom: 1.5rem;
     }
 
-    .quizSelect {
+    .answerSelect {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .answerContianer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .answerRadio {
+          display: none;
+
+          &:checked + .answerLabel {
+            border: 2px solid $buttonBorder;
+          }
+        }
+
+        .answerLabel {
+          background: $buttonColor;
+          border-radius: 5px;
+          padding: 2rem 5rem;
+          margin: 0.5rem 0.5rem;
+          flex-basis: 40%;
+
+          &:hover {
+            transform: scale(0.99);
+            cursor: pointer;
+          }
+        }
+      }
+
+      .buttonContainer {
+        .confirmAnswer {
+          // flex-basis: 100%;
+          margin: 2rem 0;
+          outline: none;
+          background-color: $dark;
+          border: none;
+          color: $backgroundColor;
+          padding: 1rem 2rem;
+          border-radius: 5px;
+
+          &:hover {
+            opacity: 0.9;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .formSelect {
       display: flex;
       align-items: center;
       justify-content: center;
