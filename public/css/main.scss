@@ -13,6 +13,7 @@
   background-color: $backgroundColor;
   font-family: "Montserrat", sans-serif;
   display: flex;
+  flex-direction: column; //for better var_dump visibility
   justify-content: center;
   align-items: center;
   // height: 100vh;
@@ -22,7 +23,7 @@
     width: 50%;
 
     .mainHeader {
-      margin-top: 5rem;
+      margin-top: 20%;
       font-size: 3rem;
       font-weight: 400;
       margin-bottom: 1.5rem;

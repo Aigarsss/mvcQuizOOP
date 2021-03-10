@@ -6,17 +6,26 @@ define('APPROOT', dirname(dirname(__FILE__)));
 // URL root
 define('URLROOT', 'http://mvcquizoop.test/');
 
-$host = "localhost";
-$dbname = "mvcquizoop";
-$dsn = "mysql:dbname=" . $dbname . ";host=" . $host;
-$dbUser = "root";
-$dbPassword = "";
+// $host = "localhost";
+define('DB_HOST', 'localhost');
+
+// $dbname = "mvcquizoop";
+define('DB_NAME', 'mvcquizoop');
+
+// $dsn = "mysql:dbname=" . $dbname . ";host=" . $host;
+define('DB_DSN', "mysql:dbname=" . DB_NAME . ";host=" . DB_HOST);
+
+// $dbUser = "root";
+define('DB_USER', 'root');
+
+// $dbPassword = "";
+define('DB_PASS', '');
 
 
-// move to model afterwards
-try {
-    $conn = new PDO($dsn, $dbUser, $dbPassword);
-} catch (PDOException $e) {
-    echo 'Connection failed: ' . $e->getMessage();
-}
+
+
+
+
+
+
 
