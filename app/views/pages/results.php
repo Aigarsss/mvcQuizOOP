@@ -3,7 +3,7 @@ require_once APPROOT . "/views/includes/header.inc.php";
 ?>
     <div class="container">
         <h1 class="mainHeader">Nice!</h1>
-        <h2 class="question">Your resut is 4!</h2>
+        <h2 class="question">Your resut is <?= $data['yourResult'];?>!</h2>
 
         <!-- process answer -->
         <form action="." method="POST" class="resultButtons">

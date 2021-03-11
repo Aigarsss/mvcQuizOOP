@@ -81,7 +81,20 @@ class Database {
 
     }
 
-    
+    public function getCorrectAnswer($questionId, $answer) {
+
+        $sql = "select * from answers where question_id = :questionId and answer_id = :answer and is_correct = 1";
+        $this->stmt = $this->dbh->prepare($sql);
+        $this->stmt->execute(['questionId' => $questionId, 'answer' => $answer]);
+        $correct = $this->stmt->fetch();
+
+        if (empty($correct)) {
+
+            return false;
+        }
+
+        return true;
+    }
     
 
 

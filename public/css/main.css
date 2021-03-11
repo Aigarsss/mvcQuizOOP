@@ -86,8 +86,6 @@
 }
 
 .body .container .answerSelect .answerContianer .answerLabel:hover {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
   cursor: pointer;
 }
 

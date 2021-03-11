@@ -29,6 +29,7 @@ class Pages extends Controller {
         if (isset($_POST['quizSelect'])) {
             $_SESSION['quizSelect'] = (int)$_POST['quizSelect'];
             $_SESSION['questionNum'] = 0;
+            $_SESSION['score'] = 0;
         }
 
         // Get amount of questions in the selected quizz
@@ -37,12 +38,22 @@ class Pages extends Controller {
         // increment question count
         if ($_SESSION['questionNum'] < $questionCount["count"] ) {
             $_SESSION['questionNum'] += 1;
-        } else if ($_SESSION['questionNum'] == $questionCount["count"]) {
-            // if last question answered
-            return $this->results();
+            
+            // TODO check score and increase
+            if ($_SESSION['questionNum'] > 1) {
+                if ($this->connectDb()->getCorrectAnswer($this->connectDb()->getQuestionId($_SESSION['quizSelect'],  $_SESSION['questionNum']-1), (int)$_POST['answer'])) {
+                    $_SESSION['score'] += 1;
+                }
+            }
+        } 
+        else if ($_SESSION['questionNum'] == $questionCount["count"]) {
+            if ($this->connectDb()->getCorrectAnswer($this->connectDb()->getQuestionId($_SESSION['quizSelect'],  $_SESSION['questionNum']), (int)$_POST['answer'])) {
+                $_SESSION['score'] += 1;
+            }
+            return $this->results($_SESSION['score']);
         }
 
-        // Get the question TODO
+        // Get the question
         $question = $this->connectDb()->getQuestion($_SESSION['quizSelect'],  $_SESSION['questionNum']);
 
         // get the answers to the question
