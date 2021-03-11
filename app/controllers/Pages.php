@@ -74,6 +74,7 @@ class Pages extends Controller {
 
     public function results($result = 0) {
 
+        // TODO process the submit score case
         
         $data = [
             "yourResult" => $result

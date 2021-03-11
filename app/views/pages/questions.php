@@ -11,7 +11,7 @@ require_once APPROOT . "/views/includes/header.inc.php";
 
                 <?php foreach($data['answers'] as $answer) : ?>
 
-                <input type="radio" id="<?=$answer['answer_id'] ;?>" name="answer" value="<?=$answer['answer_id'] ;?>" class="answerRadio">
+                <input type="radio" id="<?=$answer['answer_id'] ;?>" name="answer" value="<?=$answer['answer_id'] ;?>" class="answerRadio" required>
                 <label for="<?=$answer['answer_id'] ;?>" class="answerLabel"><?=$answer['answer'] ;?></label>
 
                 <?php endforeach; ?>
