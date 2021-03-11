@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once "../app/bootstrap.php";
 
 
@@ -9,7 +10,6 @@ $init = new Router();
 
 
 // var_dump($db->getTests());
-
 
 // echo '<pre>';
 // var_dump($_SERVER);

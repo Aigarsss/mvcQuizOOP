@@ -144,4 +144,31 @@
   opacity: 0.98;
   cursor: pointer;
 }
+
+.body .container .resultButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.body .container .resultButtons input {
+  outline: none;
+  background-color: #0d0d0d;
+  border: none;
+  color: #fdf9f7;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  margin: 0 0.5rem;
+}
+
+.body .container .resultButtons input:hover {
+  opacity: 0.98;
+  cursor: pointer;
+}
 /*# sourceMappingURL=main.css.map */

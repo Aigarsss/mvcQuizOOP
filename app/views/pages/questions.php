@@ -2,7 +2,7 @@
 require_once APPROOT . "/views/includes/header.inc.php";
 ?>
     <div class="container">
-        <h1 class="mainHeader">Question 1 of <?= $data['totalQuestions'] ?></h1>
+        <h1 class="mainHeader">Question <?= $data['questionNum']; ?> of <?= $data['totalQuestions'] ?></h1>
         <h2 class="question"><?= $data['question'] ?></h2>
 
         <!-- process answer -->

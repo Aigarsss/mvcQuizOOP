@@ -50,6 +50,28 @@ class Database {
 
     }
 
+    public function getQuestion($testId, $num) {
+        $sql = "select * from questions where test_id = :testId order by 1";
+
+        $this->stmt = $this->dbh->prepare($sql);
+        $this->stmt->execute(['testId' => $testId]);
+        $var = $this->stmt->fetchAll();
+        // var_dump($var);
+
+        return $var[$num-1]['question'];
+    }
+
+    public function getQuestionId($testId, $num) {
+        $sql = "select * from questions where test_id = :testId order by 1";
+
+        $this->stmt = $this->dbh->prepare($sql);
+        $this->stmt->execute(['testId' => $testId]);
+        $var = $this->stmt->fetchAll();
+        // var_dump($var);
+
+        return $var[$num-1]['question_id'];
+    }
+
     public function getAnswers($questionId) {
 
         $sql = "select * from answers where question_id = :questionId";
@@ -59,12 +81,8 @@ class Database {
 
     }
 
-
-    // Get question count for a selected test
-
-
-    // 
-
+    
+    
 
 
 

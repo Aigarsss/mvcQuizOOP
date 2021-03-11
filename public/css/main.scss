@@ -114,5 +114,26 @@
         }
       }
     }
+
+    .resultButtons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        outline: none;
+        background-color: $dark;
+        border: none;
+        color: $backgroundColor;
+        padding: 0.5rem 2rem;
+        border-radius: 5px;
+        margin: 0 0.5rem;
+
+        &:hover {
+          opacity: 0.98;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
