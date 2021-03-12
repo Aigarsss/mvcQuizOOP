@@ -29,6 +29,36 @@
 
 .body .container {
   width: 50%;
+  position: relative;
+}
+
+.body .container table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.body .container table td,
+.body .container table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+.body .container table tr:nth-child(even) {
+  background-color: #f5ecec;
+}
+
+.body .container .previousResults {
+  text-decoration: none;
+  border: 1px solid #0d0d0d;
+  color: #0d0d0d;
+  border-radius: 5px;
+  padding: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: -1rem;
 }
 
 .body .container .mainHeader {
@@ -73,7 +103,8 @@
 }
 
 .body .container .answerSelect .answerContianer .answerRadio:checked + .answerLabel {
-  border: 2px solid #ae613b;
+  background-color: #ae613b;
+  color: white;
 }
 
 .body .container .answerSelect .answerContianer .answerLabel {
@@ -105,17 +136,16 @@
 }
 
 .body .container .formSelect {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 50%;
   margin: auto;
+  display: block;
+}
+
+.body .container .formSelect .playerName {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  margin: 1rem 0;
 }
 
 .body .container .formSelect .quizSelect {
@@ -124,18 +154,17 @@
           flex: 3;
   padding: 0.5rem;
   margin-right: 0.5rem;
+  width: 100%;
 }
 
 .body .container .formSelect .submit {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   outline: none;
   background-color: #0d0d0d;
   border: none;
   color: #fdf9f7;
-  padding: 0.5rem 0.1rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
+  margin-top: 1rem;
 }
 
 .body .container .formSelect .submit:hover {
@@ -143,7 +172,7 @@
   cursor: pointer;
 }
 
-.body .container .resultButtons {
+.body .container .resultButton {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,7 +184,7 @@
           align-items: center;
 }
 
-.body .container .resultButtons input {
+.body .container .resultButton input {
   outline: none;
   background-color: #0d0d0d;
   border: none;
@@ -165,8 +194,18 @@
   margin: 0 0.5rem;
 }
 
-.body .container .resultButtons input:hover {
+.body .container .resultButton input:hover {
   opacity: 0.98;
   cursor: pointer;
+}
+
+.body .container .playAgain {
+  text-decoration: none;
+  color: #0d0d0d;
+  border: 1px solid #0d0d0d;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+  display: inline-block;
 }
 /*# sourceMappingURL=main.css.map */

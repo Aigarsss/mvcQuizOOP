@@ -95,7 +95,19 @@ class Database {
 
         return true;
     }
-    
+
+    public function submitScore($user, $score) {
+
+    }
+
+
+    public function getScores() {
+        $sql = "select * from scores order by score desc";
+        $this->stmt = $this->dbh->prepare($sql);
+        $this->stmt->execute();
+        return $this->stmt->fetchAll();
+
+    }
 
 
 

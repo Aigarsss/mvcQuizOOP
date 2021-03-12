@@ -30,6 +30,7 @@ class Pages extends Controller {
             $_SESSION['quizSelect'] = (int)$_POST['quizSelect'];
             $_SESSION['questionNum'] = 0;
             $_SESSION['score'] = 0;
+            $_SESSION['playerName'] = $_POST['playerName'];
         }
 
         // Get amount of questions in the selected quizz
@@ -50,7 +51,7 @@ class Pages extends Controller {
             if ($this->connectDb()->getCorrectAnswer($this->connectDb()->getQuestionId($_SESSION['quizSelect'],  $_SESSION['questionNum']), (int)$_POST['answer'])) {
                 $_SESSION['score'] += 1;
             }
-            return $this->results($_SESSION['score']);
+            return $this->results($_SESSION['score'], $_SESSION['playerName']);
         }
 
         // Get the question
@@ -72,14 +73,37 @@ class Pages extends Controller {
     }
 
 
-    public function results($result = 0) {
+    public function results($result = 0, $name = "Jon Doe") {
 
         // TODO process the submit score case
         
         $data = [
-            "yourResult" => $result
+            "yourResult" => $result,
+            "playerName" => $name
         ];
+
+        // if (isset($_POST['submitScore'])) {
+        //     echo "Add score " . $result . " and name " . $name . "to DB";
+        // }
         
         $this->view('pages/results', $data);
+    }
+
+    public function resultsTable() {
+
+
+        // TODO process the submit score case
+
+        if (isset($_POST['submitScore'])) {
+            echo "Add current score to DB";
+        }
+  
+        $scores = $this->connectDb()->getScores();
+
+        $data = [
+            "scores" => $scores
+        ];
+        
+        $this->view('pages/resultstable', $data);
     }
 }

@@ -21,6 +21,36 @@
 
   .container {
     width: 50%;
+    position: relative;
+
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      width: 60%;
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f5ecec;
+      }
+    }
+
+    .previousResults {
+      text-decoration: none;
+      border: 1px solid $dark;
+      color: $dark;
+      border-radius: 5px;
+      padding: 1rem;
+      position: absolute;
+      top: 0.5rem;
+      right: -1rem;
+    }
 
     .mainHeader {
       margin-top: 20%;
@@ -49,7 +79,8 @@
           display: none;
 
           &:checked + .answerLabel {
-            border: 2px solid $buttonBorder;
+            background-color: $buttonBorder;
+            color: white;
           }
         }
 
@@ -86,26 +117,32 @@
     }
 
     .formSelect {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       width: 50%;
       margin: auto;
+      display: block;
+
+      .playerName {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       .quizSelect {
         flex: 3;
         padding: 0.5rem;
         margin-right: 0.5rem;
+        width: 100%;
       }
 
       .submit {
-        flex: 1;
         outline: none;
         background-color: $dark;
         border: none;
         color: $backgroundColor;
-        padding: 0.5rem 0.1rem;
+        padding: 0.5rem 1rem;
         border-radius: 5px;
+        margin-top: 1rem;
 
         &:hover {
           opacity: 0.98;
@@ -114,7 +151,7 @@
       }
     }
 
-    .resultButtons {
+    .resultButton {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -133,6 +170,16 @@
           cursor: pointer;
         }
       }
+    }
+
+    .playAgain {
+      text-decoration: none;
+      color: $dark;
+      border: 1px solid $dark;
+      border-radius: 5px;
+      padding: 0.5rem 2rem;
+      margin-top: 1rem;
+      display: inline-block;
     }
   }
 }
