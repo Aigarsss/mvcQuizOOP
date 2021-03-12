@@ -96,8 +96,10 @@ class Database {
         return true;
     }
 
-    public function submitScore($user, $score) {
-
+    public function submitScore($user, $score, $testId) {
+        $sql = "insert into scores (name, score, test_id) values (:user, :score, :testId)";
+        $this->stmt = $this->dbh->prepare($sql);
+        $this->stmt->execute(['user' => $user, 'score' => $score,'testId' => $testId]);
     }
 
 

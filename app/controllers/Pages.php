@@ -81,11 +81,7 @@ class Pages extends Controller {
             "yourResult" => $result,
             "playerName" => $name
         ];
-
-        // if (isset($_POST['submitScore'])) {
-        //     echo "Add score " . $result . " and name " . $name . "to DB";
-        // }
-        
+       
         $this->view('pages/results', $data);
     }
 
@@ -95,7 +91,7 @@ class Pages extends Controller {
         // TODO process the submit score case
 
         if (isset($_POST['submitScore'])) {
-            echo "Add current score to DB";
+            $this->connectDb()->submitScore($_SESSION['playerName'], (int)$_SESSION['score'], $_SESSION['quizSelect']);
         }
   
         $scores = $this->connectDb()->getScores();
