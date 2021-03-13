@@ -17,13 +17,9 @@ class Pages extends Controller {
 
     public function questions() {
 
-        var_dump($_POST);
-        // $_SESSION['test'] = "test";
-        // var_dump($_SESSION);
-        
-        // TODO, understand how to get next question
-        // TODO, count score
-        // TODO, save score to DB
+        // var_dump($_POST);
+
+        // TODO. Not sure how to handle situation, where page is reloaded when question is opened. The count advances, but the question stays the same
 
         // set up question count
         if (isset($_POST['quizSelect'])) {
@@ -40,13 +36,14 @@ class Pages extends Controller {
         if ($_SESSION['questionNum'] < $questionCount["count"] ) {
             $_SESSION['questionNum'] += 1;
             
-            // TODO check score and increase
+            // check score and increase
             if ($_SESSION['questionNum'] > 1) {
                 if ($this->connectDb()->getCorrectAnswer($this->connectDb()->getQuestionId($_SESSION['quizSelect'],  $_SESSION['questionNum']-1), (int)$_POST['answer'])) {
                     $_SESSION['score'] += 1;
                 }
             }
         } 
+        // check score and increase if the last question
         else if ($_SESSION['questionNum'] == $questionCount["count"]) {
             if ($this->connectDb()->getCorrectAnswer($this->connectDb()->getQuestionId($_SESSION['quizSelect'],  $_SESSION['questionNum']), (int)$_POST['answer'])) {
                 $_SESSION['score'] += 1;

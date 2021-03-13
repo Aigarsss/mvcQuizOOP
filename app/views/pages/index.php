@@ -2,7 +2,7 @@
 require_once APPROOT . "/views/includes/header.inc.php";
 ?>
     <div class="container">
-        <a href="/pages/results" class="previousResults">Previous results</a>
+        <a href="/pages/resultstable" class="previousResults">Previous results</a>
 
         <h1 class="mainHeader">Welcome Stranger!</h1>
         <h2 class="question">Are you ready for some questions? Select a quiz and test yourself</h2>

@@ -9,14 +9,14 @@ require_once APPROOT . "/views/includes/header.inc.php";
                 <th>Date</th>
                 <th>Name</th>
                 <th>Score</th>
-                <th>Test id</th>
+                <th>Test name</th>
             </tr>
             <?php foreach($data['scores'] as $score): ?>
             <tr>
                 <td><?= $score['date']; ?></td>
                 <td><?= $score['name']; ?></td>
                 <td><?= $score['score']; ?></td>
-                <td><?= $score['test_id']; ?></td>
+                <td><?= $score['test_name']; ?></td>
             </tr>
             <?php endforeach; ?>
         </table>

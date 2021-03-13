@@ -104,7 +104,8 @@ class Database {
 
 
     public function getScores() {
-        $sql = "select * from scores order by score desc";
+        // $sql = "select * from scores order by score desc";
+        $sql = "select s.name as name, s.score as score, s.date as date, t.test_name as test_name from scores s join tests t on s.test_id = t.test_id order by score desc";
         $this->stmt = $this->dbh->prepare($sql);
         $this->stmt->execute();
         return $this->stmt->fetchAll();
